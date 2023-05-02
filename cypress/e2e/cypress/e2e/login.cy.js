@@ -18,7 +18,7 @@ context('Funcionalidade Login', () =>{
     it('Deve fazer login com sucesso', () =>{
     
     cy.get('.woocommerce-form > :nth-child(1) > label').type('aluno_ebac@teste.com')
-    cy.get('#password'). type(perfil.senha)
+    cy.get('#password'). type('teste@teste.com')
     cy.get('.woocommerce-form > .button').click()
     cy.get('.page-title').should('contain', 'Minha conta')
     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá')
@@ -27,7 +27,7 @@ context('Funcionalidade Login', () =>{
     it('Deve fazer login com sucesso - Usando arquivo de dados', () =>{
     
         cy.get('.woocommerce-form > :nth-child(1) > label').type(perfil.usuario)
-        cy.get('#password'). type('teste@teste.com')
+        cy.get('#password'). type(perfil.senha)
         cy.get('.woocommerce-form > .button').click()
         cy.get('.page-title').should('contain', 'Minha conta')
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá')
